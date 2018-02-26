@@ -9,30 +9,35 @@ No extern library is used, all algorithms are built from scratch
 ## Build
 
 ````bash
-$ mkdir build
-$ cd build/
+$ git submodule init
+$ git submodule sync
+$ git submodule update
+$ mkdir _build
+$ cd _build/
 $ cmake ..
 $ make
-$ ./app
 ````
 
-## Testing
+## Execute
 
 ```bash
-$ mkdir build
-$ cd build/
-$ cmake ..
-$ make check
-````
+$ make run_dnn
+$ make run_logreg
+$ make run_softmaxreg
+```
 
 ## Datasets
 
-The mnist database is used
-
-./data/mnist_train.data containts 50.0000 examples
-
-./data/mnist_test.data contains 10.000 examples
+The mnist database is used.
+It is built using python and scikit-learn.
+To build the dataset
+```bash
+$ make gen_mnist
+```
+Python3 with numpy and scikit-learn required
 
 ## Algorithms
 
 - Neural Network
+- Logistic Regression
+- Softmax Regression
